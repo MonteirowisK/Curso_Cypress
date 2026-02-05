@@ -11,15 +11,9 @@ describe('Cadastro e Login', () => {
     cy.get('.header__home').click();
     cy.get('[data-test="register-button"]').click();
 
-    cy.get('[data-test="input-name"]').type(nomeAleatorio);
-    cy.get('[data-test="input-email"]').type(emailAleatorio);
-    cy.get('[data-test="input-password"]').type(senha);
-    cy.get('[data-test="input-confirm-password"]').type(senha);
-    cy.get('[data-test="submit-button"]').click();
+    cy.cadastro(nomeAleatorio, emailAleatorio, senha);
 
-    cy.get('[data-test="input-loginEmail"]').type(emailAleatorio);
-    cy.get('[data-test="input-loginPassword"]').type(senha);
-    cy.get('[data-test="submit-button"]').click();
+    cy.login(emailAleatorio, senha);
 
     cy.contains('p', 'Olá! ').should('be.visible');
     cy.get('.header__user').click();
