@@ -4,3 +4,5 @@ node_modules/
 *.tmp
 .woff
 .woff2
+.html
+cypress/reports/mochawesome_*.html
